@@ -1,0 +1,68 @@
+﻿  pch.cpp
+  Game.cpp
+C:\Users\쭈쭈\source\repos\Nyut\Player.h(51,37): warning C4244: '=': 'double'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\쭈쭈\source\repos\Nyut\Player.h(52,37): warning C4244: '=': 'double'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\쭈쭈\source\repos\Nyut\Game.cpp(16,59): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\쭈쭈\source\repos\Nyut\Game.cpp(16,29): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\쭈쭈\source\repos\Nyut\Game.cpp(19,64): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\쭈쭈\source\repos\Nyut\Game.cpp(19,30): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\쭈쭈\source\repos\Nyut\Game.cpp(21,66): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\쭈쭈\source\repos\Nyut\Game.cpp(21,30): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\쭈쭈\source\repos\Nyut\Game.cpp(23,66): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\쭈쭈\source\repos\Nyut\Game.cpp(23,30): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\쭈쭈\source\repos\Nyut\Game.cpp(25,66): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\쭈쭈\source\repos\Nyut\Game.cpp(25,30): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\쭈쭈\source\repos\Nyut\Game.cpp(27,66): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\쭈쭈\source\repos\Nyut\Game.cpp(27,30): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\쭈쭈\source\repos\Nyut\Game.cpp(31,68): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\쭈쭈\source\repos\Nyut\Game.cpp(31,30): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\쭈쭈\source\repos\Nyut\Game.cpp(33,68): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\쭈쭈\source\repos\Nyut\Game.cpp(33,30): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\쭈쭈\source\repos\Nyut\Game.cpp(35,68): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\쭈쭈\source\repos\Nyut\Game.cpp(35,30): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\쭈쭈\source\repos\Nyut\Game.cpp(37,68): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\쭈쭈\source\repos\Nyut\Game.cpp(37,30): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\쭈쭈\source\repos\Nyut\Game.cpp(39,69): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\쭈쭈\source\repos\Nyut\Game.cpp(39,30): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\쭈쭈\source\repos\Nyut\Game.cpp(43,69): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\쭈쭈\source\repos\Nyut\Game.cpp(43,30): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\쭈쭈\source\repos\Nyut\Game.cpp(45,69): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\쭈쭈\source\repos\Nyut\Game.cpp(45,30): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\쭈쭈\source\repos\Nyut\Game.cpp(47,69): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\쭈쭈\source\repos\Nyut\Game.cpp(47,30): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\쭈쭈\source\repos\Nyut\Game.cpp(49,69): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\쭈쭈\source\repos\Nyut\Game.cpp(49,30): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\쭈쭈\source\repos\Nyut\Game.cpp(51,69): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\쭈쭈\source\repos\Nyut\Game.cpp(51,30): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\쭈쭈\source\repos\Nyut\Game.cpp(55,69): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\쭈쭈\source\repos\Nyut\Game.cpp(55,30): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\쭈쭈\source\repos\Nyut\Game.cpp(57,69): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\쭈쭈\source\repos\Nyut\Game.cpp(57,30): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\쭈쭈\source\repos\Nyut\Game.cpp(59,69): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\쭈쭈\source\repos\Nyut\Game.cpp(59,30): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\쭈쭈\source\repos\Nyut\Game.cpp(61,69): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\쭈쭈\source\repos\Nyut\Game.cpp(61,30): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\쭈쭈\source\repos\Nyut\Game.cpp(64,69): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  MainFrm.cpp
+  Mal.cpp
+  Node.cpp
+  Nyut.cpp
+C:\Users\쭈쭈\source\repos\Nyut\Game.cpp(64,30): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\쭈쭈\source\repos\Nyut\Player.h(51,37): warning C4244: '=': 'double'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\쭈쭈\source\repos\Nyut\Player.h(52,37): warning C4244: '=': 'double'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  NyutDoc.cpp
+  NyutView.cpp
+C:\Users\쭈쭈\source\repos\Nyut\NyutView.h(51,13): warning C4244: '인수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\쭈쭈\source\repos\Nyut\Player.h(51,37): warning C4244: '=': 'double'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\쭈쭈\source\repos\Nyut\Player.h(52,37): warning C4244: '=': 'double'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\쭈쭈\source\repos\Nyut\NyutView.h(51,13): warning C4244: '인수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\쭈쭈\source\repos\Nyut\NyutView.cpp(27,2): warning C4002: 함수 같은 매크로 호출 'ON_WM_LBUTTONDOWN'에 대해 인수가 너무 많습니다.
+  Player.cpp
+C:\Users\쭈쭈\source\repos\Nyut\NyutView.cpp(44,6): warning C4101: 'number' :참조되지 않은 지역 변수입니다.
+C:\Users\쭈쭈\source\repos\Nyut\Player.h(51,37): warning C4244: '=': 'double'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  코드를 생성하고 있습니다...
+C:\Users\쭈쭈\source\repos\Nyut\Player.h(52,37): warning C4244: '=': 'double'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\쭈쭈\source\repos\Nyut\Player.cpp(26): warning C4715: 'Player::checkout': 모든 제어 경로에서 값을 반환하지는 않습니다.
+C:\Users\쭈쭈\source\repos\Nyut\Player.cpp(86): warning C4715: 'Player::run': 모든 제어 경로에서 값을 반환하지는 않습니다.
+C:\Users\쭈쭈\source\repos\Nyut\NyutView.cpp(53): warning C4715: 'CNyutView::OnCreate': 모든 제어 경로에서 값을 반환하지는 않습니다.
+  Nyut.vcxproj -> C:\Users\쭈쭈\source\repos\Nyut\Debug\Nyut.exe
