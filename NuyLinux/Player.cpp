@@ -1,9 +1,10 @@
 #include "Player.h"
 #include "Session.h"
+#include <stdlib.h>
+#include <string.h>
 
 
-
-
+#if 0
 void Player::Draw(CDC* pDC)
 {
 	CBrush* pOldBrush;
@@ -32,7 +33,7 @@ void Player::Draw(CDC* pDC)
 	pDC->SelectObject(pOldBrush);
 
 }
-
+#endif 
 Node* Player::checkout(Node* pNode)
 {
 	Node* LastMoveNode = nullptr;
@@ -46,8 +47,8 @@ Node* Player::checkout(Node* pNode)
 			{
 				(*iter)->mpStartNode = (*iter)->mpMalLocation;
 				LastMoveNode = (*iter)->mpMalLocation;
-				(*iter)->mpDestNode = mpGame->getReadyNode();
-				(*iter)->mpMalLocation = mpGame->getReadyNode();
+				(*iter)->mpDestNode = mpSession->getReadyNode();
+				(*iter)->mpMalLocation = mpSession->getReadyNode();
 			}
 			iter++;
 		}
@@ -60,8 +61,8 @@ Node* Player::run(int Count, int MalID)
 	Node* LastMoveNode = nullptr;
 	if (theMalCountOnTheBoard == 0)
 	{
-		Mal* pNewMal = new Mal(this,mpGame);
-		pNewMal->setMalLocation(mpGame->getHomeNode());
+		Mal* pNewMal = new Mal(this,mpSession);
+		pNewMal->setMalLocation(mpSession->getHomeNode());
 		mMalList.push_back(pNewMal);
 		theMalCountOnTheBoard++;
 	}
@@ -72,9 +73,9 @@ Node* Player::run(int Count, int MalID)
 		list<Mal*>::iterator  iter = mMalList.begin();
 		while (iter != mMalList.end())
 		{
-			if ((*iter)->mpMalLocation == mpGame->getReadyNode() || 
+			if ((*iter)->mpMalLocation == mpSession->getReadyNode() || 
 				(*iter)->mpMalLocation->getType() ==NODE_TYPE_OUT)
-				(*iter)->mpMalLocation = mpGame->getHomeNode();
+				(*iter)->mpMalLocation = mpSession->getHomeNode();
 			Node* pCurrentNode = (*iter)->mpMalLocation;
 		
 			if ((*iter)->mpMalLocation)
@@ -125,8 +126,8 @@ Node* Player::run(int Count, int MalID)
 			iter++;
 		}
 		
-		CString NyutStr[7] = { _T("����"), _T("��"), _T("��"), _T("��"), _T("��"), _T("��"), _T("��") };
-		DebugMessage.Format(_T("%s"), NyutStr[Count + 1]);
+		char *NyutStr[7] = { "Back do","Nack", "DO", "Ge", "girl", "luyt", "mo" };
+		//printf(DebugMessage, "%s", NyutStr[Count + 1]);
 		return LastMoveNode;
 	}
 		

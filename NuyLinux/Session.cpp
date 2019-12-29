@@ -1,5 +1,6 @@
 #include "Session.h"
 #include "math.h"
+#include "time.h"
 
 #define Rad(d) (d*2*3.141592/360)
 
@@ -103,3 +104,123 @@ void Session::InitalizeNuytPlat()
 
 }
 
+
+int Session::GetNyutNumber()
+{
+	int number;
+	srand(time(NULL));
+	number = rand() % 16;
+
+	switch (number)
+	{
+	case 0:
+		number = 5;    //Mo
+		break;
+	case 1:
+		number = 4;    //Lyut
+		break;
+	case 2:
+		number = -1;
+		break;
+	case 3:
+	case 4:
+	case 5:
+		number = 1;    //Do
+		break;
+	case 6:
+	case 7:
+	case 8:
+	case 9:
+		number = 3;    //Gual
+		break;
+	case 10:
+	case 11:
+	case 12:
+	case 13:
+	case 14:
+	case 15:
+		number = 2;    //鯵
+		break;
+	default:
+		number = 0;
+	}
+	return number;
+}
+
+
+void Session::Run()
+{
+
+	int number;
+	Node* pNode;
+
+	Player1.ClearMessage();
+	Player2.ClearMessage();
+	Player3.ClearMessage();
+
+
+	if (mTurn > -1)
+	{
+		if (mTurn == 0)
+		{
+			if (Player1.GetDeferedCount() > 0)
+			{
+				/*廃腰希*/
+				Player1.CheckOutDeferedCount();
+			}
+			else
+			{
+				mTurn = 1;
+			}
+		}
+		else if (mTurn == 1)
+		{
+			if (Player2.GetDeferedCount() > 0)
+			{
+				/*廃腰希*/
+				Player2.CheckOutDeferedCount();
+			}
+			else
+			{
+				mTurn = 2;
+			}
+		}
+		else if (mTurn == 2)
+		{
+			if (Player3.GetDeferedCount() > 0)
+			{
+				Player3.CheckOutDeferedCount();
+				/*廃腰希*/
+			}
+			else
+			{
+				mTurn = 0;
+			}
+		}
+	}
+	else
+	{
+		mTurn = 0;
+	}
+
+	number = GetNyutNumber();
+
+	if (mTurn == 0)
+		pNode = Player1.run(number, 0);
+	else if (mTurn == 1)
+		pNode = Player2.run(number, 1);
+	else if (mTurn == 2)
+		pNode = Player3.run(number, 2);
+
+
+	if (number == 4 || number == 5)
+	{
+		if (mTurn == 0)
+			Player1.SetDeferedCount(Player1.GetDeferedCount() + 1);
+		else if (mTurn == 1)
+			Player2.SetDeferedCount(Player2.GetDeferedCount() + 1);
+		else if (mTurn == 2)
+			Player3.SetDeferedCount(Player3.GetDeferedCount() + 1);
+	}
+
+}

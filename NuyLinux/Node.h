@@ -1,5 +1,12 @@
 #pragma once
-#include "mal.h"
+
+#include <assert.h>
+struct POINT
+{
+	int x;
+	int y;
+};
+
 
 enum NodeType
 {
@@ -33,16 +40,7 @@ public:
 		mLocation.x = 0;
 		mLocation.y = 0;
 		mUpdateNum = -1;
-		mpCheckedMal = nullptr;
-		if (mType == NODE_TYPE_BRANCH || mType == NODE_TYPE_CROSS)
-		{
-			mBlackNode.CreateSolidBrush(RGB(50, 100, 60));
-		}
-		else
-		{
-			mBlackNode.CreateSolidBrush(RGB(200, 200, 200));
-		}
-		
+		mpCheckedMal = nullptr;		
 	}
 	
 	
@@ -82,7 +80,7 @@ public:
 		else if (!inputPort[1])
 			inputPort[1] = pNode;
 		else
-			ASSERT(pNode);
+			assert(pNode);
 	}
 
 	Node* SetNextNode(Node* pNode)
@@ -92,7 +90,7 @@ public:
 		else if (!outputPort[1])
 			outputPort[1] = pNode;
 		else
-			ASSERT(outputPort[1]);
+			assert(outputPort[1]);
 
 		pNode->setInputNode(this);
 
@@ -101,7 +99,7 @@ public:
 
 	Node * passThrough(int Count, Node* pPreviousNode, Node* pStart)
 	{
-		Node* pNodeNext = NULL;
+		Node* pNodeNext = nullptr;
 		if (mType == NODE_TYPE_BRANCH)
 		{
 			if (this == pStart)
@@ -146,7 +144,7 @@ public:
 				if (outputPort[0])
 					pNodeNext = outputPort[0];
 				else
-					ASSERT(outputPort[0]);
+					assert(outputPort[0]);
 			}
 		}
 		else if (mType == NODE_TYPE_OUT)
@@ -175,6 +173,6 @@ public:
 
 	bool CheckOut(Mal* pMal);
 
-	void Draw(CDC* pDC, int UpdateNum);
+	//void Draw(CDC* pDC, int UpdateNum);
 
 };

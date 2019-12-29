@@ -1,5 +1,6 @@
 #include "Mal.h"
 #include "Player.h"
+#include <math.h>
 #include "Session.h"
 
 
@@ -10,8 +11,8 @@ Node* Mal::kickoff(Node* pNode)
 	if (pNode == mpMalLocation)
 	{
 		pNode->CheckOut(this);
-		mpDestNode = mpGame->getReadyNode();
-		mpMalLocation = mpGame->getReadyNode();
+		mpDestNode = mpSession->getReadyNode();
+		mpMalLocation = mpSession->getReadyNode();
 	}
 	return mpMalLocation;
 
@@ -92,7 +93,7 @@ Phys* Mal::getPhyical()
 			mpDestNode = mpMalLocation;
 			if (mpDestNode->getType() != NODE_TYPE_OUT && mpDestNode->getType() != NODE_TYPE_READY)
 			{
-				if (!mpDestNode->CheckIn(this))
+				if (!mpDestNode->CheckIn(this))	
 				{
 					Mal* pMal;
 					pMal = mpDestNode->GetCheckedMal();
@@ -102,7 +103,7 @@ Phys* Mal::getPhyical()
 						pMal->vx = vx;
 						pMal->vy = vy;
 						mpPlayer->SetDeferedCount(1);
-						mpPlayer->SetMessage(_T("説壱 廃腰希"));
+						//mpPlayer->SetMessage("죽었네.");
 					}
 					//pMal->setMalStatus(MAL_READYTOGO);
 				}

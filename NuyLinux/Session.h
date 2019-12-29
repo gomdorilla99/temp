@@ -57,6 +57,7 @@ class Session
 	Node* pReadyNode;
 	
 	int mUpdateNumber;
+	int mTurn;
 public:
 	Player Player1;
 	Player Player2;
@@ -72,19 +73,14 @@ public:
 		return pReadyNode;
 	};
 
-	Session() : Player1(this), Player2(this), Player3(this)
+	Session() : Player1(this,1), Player2(this,2), Player3(this,3)
 	{
 		pHomeNode = NULL;
 		pCrossNode = NULL;
-
-		Player1.GetBrush()->CreateSolidBrush(RGB(100, 0, 0));
-		Player2.GetBrush()->CreateSolidBrush(RGB(00, 100,100));
-		Player3.GetBrush()->CreateSolidBrush(RGB(200, 150, 0));
-
-
 		InitalizeNuytPlat();
 	}
 
+#if 0
 	void Draw(CDC* pDC)
 	{
 
@@ -99,12 +95,14 @@ public:
 			pHomeNode->Draw(pDC, mUpdateNumber);
 		
 	}
-
 	void DrawMal(CDC* pDC)
 	{
 		Player1.Draw(pDC);
 		Player2.Draw(pDC);
 		Player3.Draw(pDC);
 	}
+#endif 
+	int GetNyutNumber();
+	void Run();
 	void InitalizeNuytPlat();
 };

@@ -30,6 +30,7 @@ bool Node::CheckOut(Mal* pMal)
 	}
 }
 
+#if 0
 
 void Node::Draw(CDC* pDC, int UpdateNum)
 {
@@ -77,3 +78,4 @@ void Node::Draw(CDC* pDC, int UpdateNum)
 
 	pDC->SelectObject(pOldBrush);
 }
+#endif

@@ -1,11 +1,7 @@
 #pragma once
+
 #include "Node.h"
 
-struct POINT
-{
-	int x;
-	int y;
-};
 
 enum MALStatus
 {
@@ -35,7 +31,7 @@ class Mal:public Phys
 	Player* mpPlayer;
 	Phys Particals[10];
 	enum MALStatus mStatus;
-	Session* mpGame;
+	Session* mpSession;
 
 public:
 	Node* mpMalLocation;
@@ -47,7 +43,7 @@ public:
 	
 	Mal(Player * pPlayer,Session *pGame)
 	{
-		mpGame = pGame;
+		mpSession = pGame;
 		mpPlayer = pPlayer;
 		setMalStatus(MAL_READYTOGO);
 		isDouble = false;
