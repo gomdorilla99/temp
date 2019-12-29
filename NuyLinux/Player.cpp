@@ -4,36 +4,6 @@
 #include <string.h>
 
 
-#if 0
-void Player::Draw(CDC* pDC)
-{
-	CBrush* pOldBrush;
-	pOldBrush = pDC->SelectObject(&mPlayerBrush);
-
-	if (theMalCountOnTheBoard > 0)
-	{
-		pDC->SetBkMode(TRANSPARENT);
-		// Ask Register or Go
-		list<Mal*>::iterator  iter = mMalList.begin();
-		while (iter != mMalList.end())
-		{
-			if ((*iter)->mpMalLocation && (*iter)->getMalStatus()==MAL_ON_BOARD)
-			{
-				(*iter)->Draw(pDC);
-				
-			}
-			else if ((*iter)->mpMalLocation && (*iter)->getMalStatus() == MAL_READYTOGO)
-			{
-
-			}
-
-			iter++;
-		}
-	}
-	pDC->SelectObject(pOldBrush);
-
-}
-#endif 
 Node* Player::checkout(Node* pNode)
 {
 	Node* LastMoveNode = nullptr;
