@@ -1,4 +1,4 @@
-CXX ?= g++
+CXX ?= clang
 
 # path #
 SRC_PATH = .
