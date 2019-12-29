@@ -11,60 +11,66 @@ class Mal;
 class Player
 {
 	Session *mpSession;
+	int mPlayerID;
 	list<Mal*> mMalList;
 	CBrush mPlayerBrush;
 	CString	DebugMessage;
 	CFont bigFont;
+	int mDeferedCount;
 	int theMalCountOnTheBoard;
+	int mSuccessCount;
 public:
+
+	int GetPlayerID()
+	{
+		return &mPlayerBrush;
+	}
+	void ClearMessage()
+	{
+		DebugMessage = _T("");
+	}
+	void SetMessage(CString msg)
+	{
+		DebugMessage = msg;
+	}
+	CString& GetMessage()
+	{
+		return 	DebugMessage;
+	}
+	int GetSuccessCount()
+	{
+		return mSuccessCount;
+	}
+
+	void CheckOutDeferedCount()
+	{
+		if (mDeferedCount > 0) mDeferedCount--;
+	}
+	void SetDeferedCount(int count)
+	{
+		mDeferedCount = count;
+	}
+	int GetDeferedCount()
+	{
+		return mDeferedCount;
+	}
 
 	CBrush* GetBrush()
 	{
 		return &mPlayerBrush;
 	}
 
-	Player(Session *Session) {
-		mpSession = Session;
+	Player(Game *Game, int playerID) {
+		mpGame = Game;
+		mPlayerID = playerID;
 		theMalCountOnTheBoard = 0;
-		bigFont.CreatePointFont(300, _T("�ü�"));
+		bigFont.CreatePointFont(300, _T("±Ã¼­"));
+		mDeferedCount = 0;
+		mSuccessCount = 0;
 	}
 	~Player()
 	{
 		mMalList.clear();
-	}
-
-	void Draw(CDC* pDC)
-	{
-		CBrush* pOldBrush;
-		pOldBrush = pDC->SelectObject(&mPlayerBrush);
-		if (theMalCountOnTheBoard > 0)
-		{
-			pDC->SetBkMode(TRANSPARENT);
-			// Ask Register or Go
-			list<Mal*>::iterator  iter = mMalList.begin();
-			while (iter != mMalList.end())
-			{
-				if ((*iter)->mpMalLocation)
-				{
-					POINT Point1 = (*iter)->mpMalLocation->getLocation();
-					POINT Point;
-					Point.x = (*iter)->getPhyical()->x;
-					Point.y = (*iter)->getPhyical()->y;
-					pDC->MoveTo(Point1.x, Point1.y);
-					pDC->LineTo(Point.x, Point.y);
-
-					CRect rect(Point.x-50, Point.y-50, Point.x+50, Point.y+50);
-					
-					pDC->Ellipse(rect);
-					CFont* pFont = pDC->SelectObject(&bigFont);
-					pDC->TextOutW(Point1.x, Point1.y, DebugMessage);
-					pDC->SelectObject(pFont);
-				}
-				iter++;
-			}
-		}
-		pDC->SelectObject(pOldBrush);
-
 	}
 
 	Node *run(int Count, int MalID);

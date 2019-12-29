@@ -1,6 +1,12 @@
 #pragma once
 #include "Node.h"
 
+struct POINT
+{
+	int x;
+	int y;
+};
+
 enum MALStatus
 {
 	MAL_ON_BOARD,
@@ -11,6 +17,7 @@ enum MALStatus
 	MAL_STATE_MAX
 };
 class Player;
+class Session;
 class Phys
 {
 public:
@@ -26,8 +33,9 @@ public:
 class Mal:public Phys
 {
 	Player* mpPlayer;
+	Phys Particals[10];
 	enum MALStatus mStatus;
-
+	Session* mpGame;
 
 public:
 	Node* mpMalLocation;
@@ -36,14 +44,15 @@ public:
 	Node* mpBackNode;
 	bool isDouble;
 	bool isTriple;
-
-	Mal(Player * pPlayer)
+	
+	Mal(Player * pPlayer,Session *pGame)
 	{
+		mpGame = pGame;
 		mpPlayer = pPlayer;
 		setMalStatus(MAL_READYTOGO);
 		isDouble = false;
 		isTriple = false;
-		mpMalLocation = NULL;
+		mpMalLocation = nullptr;
 	}
 
 	void setMalLocation(Node * pNode)
@@ -72,56 +81,17 @@ public:
 		return mpMalLocation;
 	}
 
-	Phys* getPhyical()
-	{
-		POINT dest;
-		double distance;
-		if (!mpDestNode)
-			mpDestNode = mpMalLocation;
-		dest = mpDestNode->getLocation();
-		distance = (((double)dest.x - x) * ((double)dest.x - x) + ((double)dest.y - y) * ((double)dest.y - y));
-
-		if (distance > 1000)
-		{
-			ax = 10 * (dest.x - x) / sqrt(distance);
-			ay = 10 * (dest.y - y) / sqrt(distance);
-			vx += ax;
-			vy += ay;
-
-		}
-		else
-		{
-			if (mpMalLocation != mpDestNode)
-				mpDestNode = mpDestNode->passThrough(1, mpDestNode, mpStartNode);
-			else
-				mpDestNode = mpMalLocation;
-			ax *= 0.9;
-			ay *= 0.9;
-			vx *= 0.5;
-			vy *= 0.5;
-
-			
-		}
-
-		/*
-		if (vx * vx + vy * vy > 10000)
-		{
-			vx *= 100 / sqrt(vx * vx + vy * vy);
-			vy *= 100 / sqrt(vx * vx + vy * vy);
-		}
-		*/
-		vx *= 0.9;
-		vy *= 0.9;
-
-		x += vx;
-		y += vy;
-
-		return (Phys * )this;
-	}
-
 
 	void setMalStatus(enum MALStatus status)
 	{
 		mStatus = status;
 	}
+	enum MALStatus getMalStatus()
+	{
+		return mStatus;
+	}
+	Node* kickoff(Node* pNode);
+	int GetPlayerID();
+//	void Draw(CDC* pDC);
+	Phys* getPhyical();
 };

@@ -1,4 +1,5 @@
 #pragma once
+#include "mal.h"
 
 enum NodeType
 {
@@ -11,6 +12,7 @@ enum NodeType
 	NODE_TYPE_MAX
 };
 
+class Mal;
 
 class Node
 {
@@ -19,18 +21,34 @@ class Node
 	POINT mLocation;
 	Node* inputPort[2];
 	Node* outputPort[2];
+	Mal* mpCheckedMal;
 public: 
 	Node(enum NodeType type)
 	{
 		mType = type;
-		inputPort[0] = NULL;
-		inputPort[1] = NULL;
-		outputPort[0] = NULL;
-		outputPort[1] = NULL;
+		inputPort[0] = nullptr;
+		inputPort[1] = nullptr;
+		outputPort[0] = nullptr;
+		outputPort[1] = nullptr;
 		mLocation.x = 0;
 		mLocation.y = 0;
 		mUpdateNum = -1;
-		mBlackNode.CreateSolidBrush(RGB(200, 200, 200));
+		mpCheckedMal = nullptr;
+		if (mType == NODE_TYPE_BRANCH || mType == NODE_TYPE_CROSS)
+		{
+			mBlackNode.CreateSolidBrush(RGB(50, 100, 60));
+		}
+		else
+		{
+			mBlackNode.CreateSolidBrush(RGB(200, 200, 200));
+		}
+		
+	}
+	
+	
+	Mal* GetCheckedMal()
+	{
+		return mpCheckedMal;
 	}
 
 	enum NodeType getType()
@@ -38,38 +56,6 @@ public:
 		return mType;
 	}
 	
-	void Draw(int UpdateNum)
-	{
-		if(UpdateNum != mUpdateNum)
-		{
-			mUpdateNum = UpdateNum;
-			if (outputPort[0])
-			{
-				//pDC->MoveTo(mLocation.x, mLocation.y);
-				//pDC->LineTo(outputPort[0]->mLocation.x, outputPort[0]->mLocation.y);
-
-				outputPort[0]->Draw(pDC, UpdateNum);
-
-			}
-			if (outputPort[1]) 
-			{
-				//pDC->MoveTo(mLocation.x, mLocation.y);
-				//pDC->LineTo(outputPort[1]->mLocation.x, outputPort[1]->mLocation.y);
-
-				outputPort[1]->Draw(pDC, UpdateNum);
-			}
-	//		pDC->Ellipse(mLocation.x - 10, mLocation.y - 10, mLocation.x + 10, mLocation.y + 10);
-
-			if (mType == NODE_TYPE_CROSS ||
-				mType == NODE_TYPE_HOME ||
-				mType == NODE_TYPE_BRANCH)
-			{
-	//			pDC->Ellipse(mLocation.x - 15, mLocation.y - 15, mLocation.x + 15, mLocation.y + 15);
-			}
-		}
-
-	//	pDC->SelectObject(pOldBrush);
-	}
 
 	void setLocation(int x, int y)
 	{
@@ -163,7 +149,7 @@ public:
 					ASSERT(outputPort[0]);
 			}
 		}
-		else if (mType == NODE_TYPE_CROSS)
+		else if (mType == NODE_TYPE_OUT)
 		{
 			return this;
 		}
@@ -185,4 +171,10 @@ public:
 		return pNodeNext;
 	}
 	
+	bool CheckIn(Mal* pMal);
+
+	bool CheckOut(Mal* pMal);
+
+	void Draw(CDC* pDC, int UpdateNum);
+
 };
