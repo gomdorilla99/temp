@@ -3,7 +3,7 @@
 
 #define Rad(d) (d*2*3.141592/360)
 
-void Game::InitalizeNuytPlat()
+void Session::InitalizeNuytPlat()
 {
 	Node* pNode;
 	int offset_x = 700;

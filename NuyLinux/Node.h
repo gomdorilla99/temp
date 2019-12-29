@@ -1,6 +1,5 @@
 #pragma once
 
-
 enum NodeType
 {
 	NODE_TYPE_HOME,
@@ -13,7 +12,6 @@ enum NodeType
 };
 
 
-
 class Node
 {
 	int mUpdateNum;
@@ -21,7 +19,6 @@ class Node
 	POINT mLocation;
 	Node* inputPort[2];
 	Node* outputPort[2];
-	CBrush mBlackNode;
 public: 
 	Node(enum NodeType type)
 	{
@@ -41,15 +38,10 @@ public:
 		return mType;
 	}
 	
-	void Draw(CDC* pDC, int UpdateNum)
+	void Draw(int UpdateNum)
 	{
-		CBrush* pOldBrush;
-		pOldBrush = pDC->SelectObject(&mBlackNode);
-		
 		if(UpdateNum != mUpdateNum)
 		{
-			
-		
 			mUpdateNum = UpdateNum;
 			if (outputPort[0])
 			{
@@ -66,17 +58,17 @@ public:
 
 				outputPort[1]->Draw(pDC, UpdateNum);
 			}
-			pDC->Ellipse(mLocation.x - 10, mLocation.y - 10, mLocation.x + 10, mLocation.y + 10);
+	//		pDC->Ellipse(mLocation.x - 10, mLocation.y - 10, mLocation.x + 10, mLocation.y + 10);
 
 			if (mType == NODE_TYPE_CROSS ||
 				mType == NODE_TYPE_HOME ||
 				mType == NODE_TYPE_BRANCH)
 			{
-				pDC->Ellipse(mLocation.x - 15, mLocation.y - 15, mLocation.x + 15, mLocation.y + 15);
+	//			pDC->Ellipse(mLocation.x - 15, mLocation.y - 15, mLocation.x + 15, mLocation.y + 15);
 			}
 		}
 
-		pDC->SelectObject(pOldBrush);
+	//	pDC->SelectObject(pOldBrush);
 	}
 
 	void setLocation(int x, int y)

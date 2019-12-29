@@ -5,12 +5,12 @@
 constexpr auto MAX_NUM_MAL = 3;
 using namespace std;
 
-class Game;
+class Session;
 class Mal;
 
 class Player
 {
-	Game *mpGame;
+	Session *mpSession;
 	list<Mal*> mMalList;
 	CBrush mPlayerBrush;
 	CString	DebugMessage;
@@ -23,10 +23,10 @@ public:
 		return &mPlayerBrush;
 	}
 
-	Player(Game *Game) {
-		mpGame = Game;
+	Player(Session *Session) {
+		mpSession = Session;
 		theMalCountOnTheBoard = 0;
-		bigFont.CreatePointFont(300, _T("±Ã¼­"));
+		bigFont.CreatePointFont(300, _T("ï¿½Ã¼ï¿½"));
 	}
 	~Player()
 	{

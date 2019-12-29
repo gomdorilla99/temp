@@ -48,7 +48,7 @@ static Node* addCross(Node* pNode)
 }
 
 
-class Game
+class Session
 {
 	Node* pHomeNode;
 	Node* pCrossNode;
@@ -72,7 +72,7 @@ public:
 		return pReadyNode;
 	};
 
-	Game() : Player1(this), Player2(this), Player3(this)
+	Session() : Player1(this), Player2(this), Player3(this)
 	{
 		pHomeNode = NULL;
 		pCrossNode = NULL;

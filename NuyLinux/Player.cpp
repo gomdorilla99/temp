@@ -1,6 +1,5 @@
-#include "pch.h"
 #include "Player.h"
-#include "Game.h"
+#include "Session.h"
 
 
 Node* Player::checkout(Node* pNode)
@@ -78,7 +77,7 @@ Node* Player::run(int Count, int MalID)
 			iter++;
 		}
 		
-		CString NyutStr[7] = { _T("»ªµµ"), _T("³«"), _T("µµ"), _T("°³"), _T("°É"), _T("À·"), _T("¸ð") };
+		CString NyutStr[7] = { _T("ï¿½ï¿½ï¿½ï¿½"), _T("ï¿½ï¿½"), _T("ï¿½ï¿½"), _T("ï¿½ï¿½"), _T("ï¿½ï¿½"), _T("ï¿½ï¿½"), _T("ï¿½ï¿½") };
 		DebugMessage.Format(_T("%s"), NyutStr[Count + 1]);
 		return LastMoveNode;
 	}
