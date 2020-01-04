@@ -8,7 +8,7 @@ int main(int argc, char **argv)
 	Session game;
 	while (1)
 	{
-
+		
 		game.Run();
 	}
 }
